@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: deepskyblue;
+        }
+
+    </style>
+<body>
+<div id="e"></div>
+</body>
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<script src="js/browser.min.js"></script>
+<script type="text/babel">
+    var Notes = React.createClass({
+        render: function () {
+            return <ul>{
+                React.Children.map(this.props.children, function (children) {
+                    return <li>{children}</li>
+                })
+            }</ul>
+        }
+    })
+    ReactDOM.render(
+        <Notes>
+            <span >Hello</span>
+            <span>World</span>
+        </Notes>,
+        document.getElementById("e")
+    )
+
+</script>
+</html>

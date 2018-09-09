@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div {
+        color: red;
+    }
+
+</style>
+<body>
+<div id="example"></div>
+
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<script src="js/browser.min.js"></script>
+<script type="text/babel">
+    var names = [<input type="text"/>, "world", "aaa"]
+    ReactDOM.render(
+        <div>{names}</div>,
+        document.getElementById("example")
+    )
+</script>
+</body>
+</html>

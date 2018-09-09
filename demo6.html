@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: deepskyblue;
+        }
+
+    </style>
+<body>
+<div id="e"></div>
+</body>
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<script src="js/browser.min.js"></script>
+<script type="text/babel">
+    var MyState = React.createClass(
+        {
+            getInitialState: function () {
+                return {isStudy: true}
+            },
+            clickHandler: function (event) {
+                this.setState({isStudy: !this.state.isStudy})
+            },
+            render: function () {
+                var study = this.state.isStudy ? "正在学习" : "假装学习";
+                return (
+                    <div><p>
+                        {study}
+                    </p><input type="button" value="改变学习状态" onClick={this.clickHandler}/></div>
+                )
+            }
+        }
+    )
+    ReactDOM.render(
+        <MyState/>,
+        document.getElementById("e")
+    )
+</script>
+</html>

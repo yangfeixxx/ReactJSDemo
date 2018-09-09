@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: deepskyblue;
+        }
+
+    </style>
+<body>
+<div id="e"></div>
+</body>
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<script src="js/browser.min.js"></script>
+<script type="text/babel">
+    var MyComponent = React.createClass(
+        {
+            clickHandler: function () {
+                this.refs.bipu.focus()
+            },
+            render: function () {
+                return (
+                    <div>
+                        <input type="text" ref="ipu"/>
+                        <input type="button" value="hahahah" ref="bipu" onClick={this.clickHandler}/>
+                    </div>
+                )
+            }
+        }
+    )
+    ReactDOM.render(
+        <MyComponent/>
+        ,
+        document.getElementById("e")
+    )
+
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div {
+        color: deepskyblue;
+    }
+
+</style>
+<body>
+<div id="e"></div>
+</body>
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<script src="js/browser.min.js"></script>
+<script type="text/babel">
+    var HelloMessage = React.createClass({
+        render: function () {
+            return <h1>Hello{"  " + this.props.id + " hahah " + this.props.name}</h1>;
+        }
+    })
+    ReactDOM.render(
+        <HelloMessage name="fly sheep" id="xixi"/>,
+        document.getElementById("e")
+    )
+
+</script>
+</html>
